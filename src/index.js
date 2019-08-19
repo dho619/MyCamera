@@ -1,21 +1,51 @@
 //Importacoes de componentes
 import React, { Component } from 'react';
-import { StyleSheet, StatusBar, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, StatusBar, View, TouchableOpacity, PermissionsAndroid } from 'react-native';
 import { RNCamera } from 'react-native-camera';
+import CameraRoll from "@react-native-community/cameraroll";
 
 //Importacoes vindo de outras arquivos
-import { Container, buttonContainer, preview, capture } from './styles';
+import { Container} from './styles';
 import Header from './components/Header';
 
 
 
 export default class App extends Component {
+    state = {
+        contator: 0,
+    }
+
     //funcao ao clicar o botao de tirar foto
     takePicture = async () => {
-        if (this.camera) {
-            const options = { quality: 0.5, base64: true };
+        try { //Tratando erro
+            try {
+                const permission = PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE;
+                await PermissionsAndroid.request(permission);
+                Promise.resolve();
+            } catch (error) {
+                Promise.reject(error);
+            }
+            if (this.camera) {
+                //Configurando a foto
+                const options = { 
+                    quality: 0.5, 
+                    base64: true,
+                    forceUpOrientation: true,
+                    fixOrientation: true,
+
+            };
             const data = await this.camera.takePictureAsync(options)
-            alert(data.uri);
+            
+            await CameraRoll.saveToCameraRoll(data.uri);
+
+            const { contador } = this.state; //Apenas para ficar mais legivel a proxima linha
+            
+            // incrementa o contador de fotos e exibe a mensagem que salvou a fotossssssssssssssssssssssss
+            this.setState({contador: contador + 1}, () => alert("Foto Salva"));
+
+        }
+        } catch (error) { 
+            alert(error) //Apenas exibe o erro
         }
     }
     render() {
@@ -31,7 +61,10 @@ export default class App extends Component {
                     type={RNCamera.Constants.Type.back}
                     autoFocus={RNCamera.Constants.AutoFocus.on}
                     flashMode={RNCamera.Constants.FlashMode.off}
+                    captureAudio = {false}
+                    
                 />
+                
                 <View style={styles.buttonContainer}>
                     <TouchableOpacity onPress={this.takePicture} style={styles.capture}/>
                 </View>

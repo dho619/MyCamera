@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Aug 19 07:03:37 BRT 2019
+#Mon Aug 19 16:01:33 BRT 2019
 56.path=lib/x86/libjscexecutor.so
 5.base=/home/dho619/Documentos/CursosReact/MyCamera/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
 42.base=/home/dho619/Documentos/CursosReact/MyCamera/android/app/build/intermediates/transforms/mergeJniLibs/debug/0

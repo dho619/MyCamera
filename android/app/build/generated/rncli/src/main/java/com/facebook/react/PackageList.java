@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import com.mycamera.BuildConfig;
 import com.mycamera.R;
 
+// @react-native-community/cameraroll
+import com.reactnativecommunity.cameraroll.CameraRollPackage;
 // react-native-camera
 import org.reactnative.camera.RNCameraPackage;
 // react-native-vector-icons
@@ -50,6 +52,7 @@ public class PackageList {
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(),
+      new CameraRollPackage(),
       new RNCameraPackage(),
       new VectorIconsPackage()
     ));
