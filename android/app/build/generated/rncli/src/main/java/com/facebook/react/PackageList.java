@@ -15,6 +15,8 @@ import com.mycamera.R;
 
 // react-native-camera
 import org.reactnative.camera.RNCameraPackage;
+// react-native-vector-icons
+import com.oblador.vectoricons.VectorIconsPackage;
 
 public class PackageList {
   private Application application;
@@ -48,7 +50,8 @@ public class PackageList {
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(),
-      new RNCameraPackage()
+      new RNCameraPackage(),
+      new VectorIconsPackage()
     ));
   }
 }

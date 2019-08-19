@@ -5,6 +5,7 @@ INJECTED from /home/dho619/Documentos/CursosReact/MyCamera/android/app/src/main/
 INJECTED from /home/dho619/Documentos/CursosReact/MyCamera/android/app/src/main/AndroidManifest.xml:1:1-26:12
 INJECTED from /home/dho619/Documentos/CursosReact/MyCamera/android/app/src/main/AndroidManifest.xml:1:1-26:12
 MERGED from /home/dho619/Documentos/CursosReact/MyCamera/android/app/src/main/AndroidManifest.xml:1:1-26:12
+MERGED from [:react-native-vector-icons] /home/dho619/Documentos/CursosReact/MyCamera/node_modules/react-native-vector-icons/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-camera] /home/dho619/Documentos/CursosReact/MyCamera/node_modules/react-native-camera/android/build/intermediates/library_manifest/generalDebug/AndroidManifest.xml:2:1-18:12
 MERGED from [androidx.exifinterface:exifinterface:1.0.0] /home/dho619/.gradle/caches/transforms-2/files-2.1/4fbf458940dd927f7bf08919dd422538/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-vision:17.0.2] /home/dho619/.gradle/caches/transforms-2/files-2.1/292f40aab91c444c30789fd32f4af07a/AndroidManifest.xml:2:1-9:12
@@ -158,6 +159,8 @@ uses-sdk
 INJECTED from /home/dho619/Documentos/CursosReact/MyCamera/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/dho619/Documentos/CursosReact/MyCamera/android/app/src/main/AndroidManifest.xml
 INJECTED from /home/dho619/Documentos/CursosReact/MyCamera/android/app/src/main/AndroidManifest.xml
+MERGED from [:react-native-vector-icons] /home/dho619/Documentos/CursosReact/MyCamera/node_modules/react-native-vector-icons/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-vector-icons] /home/dho619/Documentos/CursosReact/MyCamera/node_modules/react-native-vector-icons/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-camera] /home/dho619/Documentos/CursosReact/MyCamera/node_modules/react-native-camera/android/build/intermediates/library_manifest/generalDebug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-camera] /home/dho619/Documentos/CursosReact/MyCamera/node_modules/react-native-camera/android/build/intermediates/library_manifest/generalDebug/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.exifinterface:exifinterface:1.0.0] /home/dho619/.gradle/caches/transforms-2/files-2.1/4fbf458940dd927f7bf08919dd422538/AndroidManifest.xml:20:5-44

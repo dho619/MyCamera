@@ -1,4 +1,4 @@
-#Sun Aug 18 15:17:49 BRT 2019
+#Mon Aug 19 07:03:36 BRT 2019
 base.0=/home/dho619/Documentos/CursosReact/MyCamera/android/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

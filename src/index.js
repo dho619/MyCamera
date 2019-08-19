@@ -4,7 +4,7 @@ import { StyleSheet, StatusBar, View, Text, TouchableOpacity } from 'react-nativ
 import { RNCamera } from 'react-native-camera';
 
 //Importacoes vindo de outras arquivos
-import { Container } from './styles';
+import { Container, buttonContainer, preview, capture } from './styles';
 import Header from './components/Header';
 
 
@@ -33,10 +33,7 @@ export default class App extends Component {
                     flashMode={RNCamera.Constants.FlashMode.off}
                 />
                 <View style={styles.buttonContainer}>
-
-                    <TouchableOpacity onPress={this.takePicture} style={styles.capture}>
-                        <Text style={styles.buttonText}></Text>
-                    </TouchableOpacity>
+                    <TouchableOpacity onPress={this.takePicture} style={styles.capture}/>
                 </View>
             </Container>
         );
@@ -46,11 +43,6 @@ export default class App extends Component {
 
 //Stylus da camera
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        flexDirection: "column",
-        backgroundColor: "black"
-    },
     preview: {
         flex: 1,
         justifyContent: "flex-end",
@@ -59,21 +51,15 @@ const styles = StyleSheet.create({
     buttonContainer: {
         flex: 0,
         flexDirection: "row",
-        alignItems: 'center',
-        height: 70,
-    },
-    capture: {
+        justifyContent: "center"
+      },
+      capture: {
         flex: 0,
-        backgroundColor: "#A9A9A9",
-        padding: 5,
-        height: 60,
-        width: 60, 
-        borderRadius:100,    
         backgroundColor: "#fff",
-        marginLeft: 150,
-        
-    },
-    buttonText: {
-        fontSize: 14
-    }
+        borderRadius: 120,
+        padding: 35,
+        paddingHorizontal: 35,
+        alignSelf: "center",
+        margin: 20,
+      },
 });
