@@ -44,6 +44,8 @@ export const styles = StyleSheet.create({
     },
     modalImage: {
       width: Dimensions.get('window').width * 0.8,
-      marginHorizontal: Dimensions.get('window').width * 0.1, 
+      marginHorizontal: Dimensions.get('window').width * 0.1,
+      height: Dimensions.get('window').height * 0.7,
+      marginVertical: Dimensions.get('window').height * 0.15,  
     },
 });

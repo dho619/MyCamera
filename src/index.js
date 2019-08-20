@@ -12,6 +12,7 @@ import Header from './components/Header';
 
 
 export default class App extends Component {
+    //Variaveis de controle
     state = {
         contador: 0,
         visivel:  false,
@@ -47,25 +48,30 @@ export default class App extends Component {
             
             // incrementa o contador de fotos e exibe a mensagem que salvou a foto
             this.setState({contador: contador + 1}, () => alert("Foto Salva"));
-
+            this.AlternaVisibilidade(); //Chama o showModal das imagens
         }
         } catch (error) { 
             alert(error) //Apenas exibe o erro
         }
     }
 
+    //Alternar Visibilidade da Galeria
     AlternaVisibilidade = async () => {
         const { visivel } = this.state;
         if (!visivel) {
-            try {
-                const images = await CameraRoll.getPhotos({
-                    first: this.state.contador,
-                    assetType: 'Photos',
-                });
-                //Se esta invisivel, clk visivel e salva as imagens
-                this.setState({visivel: !visivel,  imagesList: images.edges});
-            } catch (error) {
-               alert("Nao existe nenhuma foto a ser exibida"); 
+            if (this.state.contador > 0){
+                try {
+                    const images = await CameraRoll.getPhotos({
+                        first: this.state.contador,
+                        assetType: 'Photos',
+                    });
+                    //Se esta invisivel, clk visivel e salva as imagens
+                    await this.setState({visivel: !visivel,  imagesList: images.edges});
+                } catch (error) {
+                alert(error); 
+                }
+            } else {
+                alert("Nenhuma Imagem para ser Exibida!");
             }
 
         } else {
@@ -73,6 +79,7 @@ export default class App extends Component {
         }
     }
 
+    //Trocar de camera
     AlternaCamera = async () => {
         if (this.state.tipoCamera == RNCamera.Constants.Type.back){
             this.setState({tipoCamera: RNCamera.Constants.Type.front});
@@ -93,16 +100,18 @@ export default class App extends Component {
                         onRequestClose={this.toggleVisivel}
                 > 
                     <View style={styles.modalContainer}>
-                        <ScrollView horizontal pagingEnabled> 
-                        { this.state.imagesList.map( image => {
-                                <Image
-                                    key={{ uri: image.node.image.uri }}
-                                    source={{ uri: image.node.image.uri }}
-                                    style={styles.modalImage}
-                                    resizeMode = "contain"
-                                />
-                            })}
-                        </ScrollView>
+                            <ScrollView horizontal pagingEnabled> 
+                                {   
+                                    this.state.imagesList.map( image => {
+                                    <Image
+                                        key={{ uri: image.node.image.uri }}
+                                        source={{ uri: image.node.image.uri, }}
+                                        style={styles.modalImage}
+                                        resizeMode = "contain"
+                                    />
+                                })}
+                            </ScrollView>    
+                           
                         <View style={styles.buttonContainer}>
                             <TouchableOpacity onPress={this.AlternaVisibilidade} style={styles.galeria}>
                                 <Text>X</Text>
